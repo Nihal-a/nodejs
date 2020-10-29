@@ -5,11 +5,12 @@
 
             <div class="col-md-3 p-3">
                 <div class="card" style="width: 15rem; height: 23rem;">
-                    <img class="card-img-top"
+                    <img class="card-img-top p-2"
                      src="/product-images/{{this._id}}.jpg" 
                      alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">{{this.Name}}</h5>
+                        <p class="card-text">RS.{{this.price}}</p>
                         <p class="card-text">{{this.Description}}</p>
                         <button onclick="addToCart('{{this._id}}')" class="btn btn-primary">Add to cart</button>
                     </div>
