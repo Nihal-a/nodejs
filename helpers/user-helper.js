@@ -150,5 +150,17 @@ module.exports ={
                     })
            }
         })
+    },
+    removeCartItem:(details)=>{
+        return new Promise((resolve,reject)=>{
+            db.get().collection(collection.CART_COLLECTION)
+                    .updateOne({_id:objectId(details.cart)},
+                    {
+                        $pull:{products:{item:objectId(details.product)}}
+                    }
+                    ).then((response)=>{
+                        resolve({ removeProduct : true })
+                    })
+        })
     }
 }
