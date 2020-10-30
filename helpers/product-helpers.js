@@ -6,6 +6,7 @@ const { response } = require('express');
 
 module.exports = {
     addProduct:(product,callback)=>{
+        product.Price=parseInt(product.Price)
         console.log(product);
         db.get().collection('product').insertOne(product).then((data)=>{
             callback(data.ops[0]._id)
@@ -33,13 +34,14 @@ module.exports = {
         })
     },
     updateProduct:(proId,proDetails)=>{
+        proDetails.Price=parseInt(proDetails.Price)
         return new Promise((resolve,reject)=>{
             db.get().collection(collection.PRODUCT_COLLECTION)
             .updateOne({_id:objectId(proId)},{
                 $set:{
                     Name:proDetails.Name,
                     Description:proDetails.Description,
-                    price:proDetails.Price,
+                    Price:proDetails.Price,
                     Category:proDetails.Category
                 }
             }).then((response)=>{

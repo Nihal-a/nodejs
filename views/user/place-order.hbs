@@ -1,0 +1,47 @@
+<section>
+    <div class="container mt-s">
+        <form action="" id="checkout-form">
+            <div class="row">
+                <div class="col-md-6 mt-3">
+                    <h2>Delivery Details</h2>
+                    <div>
+                        <label for="">Address</label>
+                        <input class="form-control" type="text" id="address" name="address">
+
+                        <label for="">Pincode</label>
+                        <input class="form-control" type="text" id="pincode" name="pincode">
+
+                        <label for="">Mobile</label>
+                        <input class="form-control" type="text" id="mobile" name="mobile">
+
+                    </div>
+                    <div class="col-md-6">
+                        <div class="pay-part mt-3  checkout">
+                            <h5>Total Amount - RS:{{total}}</h5>
+                            <hr>
+                            <div class="payment">
+                                <h6>Payment Method</h6>
+                                <label class="radio-inline">
+                                    <input type="radio" name="payment-method" value="COD" checked>COD
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="payment-method" value="ONLINE" class="ml-2">ONLINE PAYMENT
+                                </label>
+                                <button class="btn btn-primary float-right" type="submit">Checkout</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<style>
+    button{
+        width: 100%;
+    }
+    .pay-part{
+        
+        align-items: center;
+    }
+</style>
